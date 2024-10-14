@@ -1,5 +1,5 @@
 // app.js
-const targetLocation = { lat: 35.56653, lng: 139.61069 }; // 蒲田駅の緯度経度
+const targetLocation = { lat: 35.564035, lng: 139.714652 }; // 蒲田駅の緯度経度
 
 document.getElementById('getLocation').addEventListener('click', function() {
     if (navigator.geolocation) {
