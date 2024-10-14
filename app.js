@@ -1,5 +1,5 @@
 // app.js
-const targetLocation = { lat: 35.681236, lng: 139.767125 }; // 例: 東京駅の緯度経度
+const targetLocation = { lat: 35.56653, lng: 139.61069 }; // 蒲田駅の緯度経度
 
 document.getElementById('getLocation').addEventListener('click', function() {
     if (navigator.geolocation) {
@@ -18,7 +18,13 @@ function showPosition(position) {
     document.getElementById('location').textContent = `あなたの位置: 緯度 ${userLocation.lat}, 経度 ${userLocation.lng}`;
 
     const distance = calculateDistance(userLocation, targetLocation);
-    document.getElementById('distance').textContent = `東京駅までの距離: ${distance.toFixed(2)} km`;
+    const direction = calculateDirection(userLocation, targetLocation);
+
+    if (distance <= 0.1) { // 100m = 0.1km
+        document.getElementById('result').textContent = "正解";
+    } else {
+        document.getElementById('result').textContent = `蒲田駅までの距離: ${distance.toFixed(2)} km, 方角: ${direction}`;
+    }
 }
 
 function showError(error) {
@@ -51,4 +57,20 @@ function calculateDistance(coord1, coord2) {
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     
     return R * c; // 距離 (km)
+}
+
+function calculateDirection(coord1, coord2) {
+    const lat1 = coord1.lat;
+    const lon1 = coord1.lng;
+    const lat2 = coord2.lat;
+    const lon2 = coord2.lng;
+
+    const dLon = lon2 - lon1;
+    const y = Math.sin(dLon) * Math.cos(lat2);
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
+    const initialBearing = Math.atan2(y, x);
+
+    const direction = (initialBearing * 180 / Math.PI + 360) % 360; // 方位角を0-360度に変換
+
+    return direction.toFixed(2) + "°";
 }
