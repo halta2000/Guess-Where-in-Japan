@@ -70,7 +70,13 @@ function calculateDirection(coord1, coord2) {
     const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLon);
     const initialBearing = Math.atan2(y, x);
 
-    const direction = (initialBearing * 180 / Math.PI + 360) % 360; // 方位角を0-360度に変換
+    const directionDegrees = (initialBearing * 180 / Math.PI + 360) % 360; // 方位角を0-360度に変換
 
-    return direction.toFixed(2) + "°";
+    // 8方位に変換
+    const directions = [
+        "北", "北北東", "北東", "東", "南東", "南", "南西", "西", "北西", "北"
+    ];
+
+    const index = Math.round(directionDegrees / 45) % 8; // 0から7のインデックス
+    return directions[index];
 }
