@@ -1,0 +1,35 @@
+.profile {
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--card);
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    color: var(--gray);
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    color: white;
+    border-bottom-color: var(--primary);
+}
