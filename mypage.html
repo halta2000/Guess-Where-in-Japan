@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page - Tokyo Quest</title>
+    <link rel="stylesheet" href="styles/mypage.css">
+</head>
+<body>
+    <div class="profile">
+        <div class="profile-header">
+            <img src="/profile.jpg" alt="Profile" class="profile-avatar">
+            <div class="profile-info">
+                <h2>Eli</h2>
+                <p class="points">Points: 200</p>
+            </div>
+            <button class="edit-btn">Edit</button>
+        </div>
+        <div class="tabs">
+            <button class="tab active" data-tab="hunted">Hunted</button>
+            <button class="tab" data-tab="presented">Presented</button>
+        </div>
+        <div class="photo-grid" id="photoGrid"></div>
+    </div>
+    <script src="js/mypage.js"></script>
+</body>
+</html>

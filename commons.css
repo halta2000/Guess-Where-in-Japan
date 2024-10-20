@@ -1,0 +1,53 @@
+:root {
+    --primary: #4B0BF4;
+    --dark: #111827;
+    --card: #1F2937;
+    --gray: #6B7280;
+    --safe-bottom: env(safe-area-inset-bottom);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: -apple-system, system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    padding: 8px 16px calc(8px + var(--safe-bottom));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    border-top: 1px solid var(--card);
+}

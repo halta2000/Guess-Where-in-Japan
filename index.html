@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokyoQuest</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        img {
-            max-width: 50%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
-        }
-    </style>
+    <title>Tokyo Quest</title>
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-    <h1>TokyoQuest</h1>
-    
-    <!-- 画像を挿入 -->
-    <img src="kamata.jpg" alt="アプリのイメージ画像">
-
-    <button id="getLocation">Verify Location</button>
-    <p id="location"></p>
-    <p id="result"></p>
-
-    <script src="app.js"></script>
+    <div class="home">
+        <img src="/tokyo-map.svg" alt="Tokyo Map" class="tokyo-map">
+        <h1 class="title">Tokyo Quest</h1>
+        <p class="subtitle">Explore Tokyo and hunt the hidden location.</p>
+        <button class="btn btn-primary" data-area="shibuya">Shibuya</button>
+        <button class="btn btn-secondary" data-area="shinjuku">Shinjuku</button>
+        <button class="btn btn-secondary" data-area="ueno">Ueno</button>
+    </div>
+    <script src="js/home.js"></script>
 </body>
 </html>
