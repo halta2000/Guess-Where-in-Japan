@@ -1,0 +1,10 @@
+.success {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-image {
+    width: 100%;
+    border-radius: 16px;
+    margin: 24px 0;
+}
